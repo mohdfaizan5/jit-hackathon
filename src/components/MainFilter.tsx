@@ -2,6 +2,13 @@ import React from "react";
 import { IoIosOptions } from "react-icons/io";
 import { Button } from "./ui/button";
 import { FaAngleDown } from "react-icons/fa";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const MainFilter = () => {
   return (
@@ -10,12 +17,30 @@ const MainFilter = () => {
         <IoIosOptions />
         Filter
       </Button>
-      <Button variant={"outline"}>Remote</Button>
-      <Button variant={"outline"}>Location</Button>
-      <Button variant={"outline"} className="flex items-center gap-1">
-        Within 10kms
-        <FaAngleDown />
-      </Button>
+      {/* <Button variant={"outline"}>Location</Button> */}
+      <Select>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Job near me" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="10">Within 5-10kms</SelectItem>
+          <SelectItem value="dark">10-20kms</SelectItem>
+          <SelectItem value="system">Ok to relocate</SelectItem>
+        </SelectContent>
+      </Select>
+      <Select>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Job Type" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="light">Full time</SelectItem>
+          <SelectItem value="dark">Internships</SelectItem>
+          <SelectItem value="system">Fresher</SelectItem>
+          <SelectItem value="system">Part time</SelectItem>
+        </SelectContent>
+      </Select>
+
+      {/* popup */}
       <Button variant={"outline"} className="flex items-center gap-1">
         Skills
         <FaAngleDown />
