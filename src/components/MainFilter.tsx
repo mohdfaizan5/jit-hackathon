@@ -9,14 +9,35 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const MainFilter = () => {
   return (
     <section className="flex items-center gap-1 justify-start w-screen mt-4">
-      <Button variant={"outline"} className="flex items-center gap-1">
-        <IoIosOptions />
-        Filter
-      </Button>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant={"outline"} className="flex items-center gap-1">
+            <IoIosOptions />
+            Filter
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogDescription>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
       {/* <Button variant={"outline"}>Location</Button> */}
       <Select>
         <SelectTrigger className="w-[180px]">
@@ -41,10 +62,40 @@ const MainFilter = () => {
       </Select>
 
       {/* popup */}
-      <Button variant={"outline"} className="flex items-center gap-1">
-        Skills
-        <FaAngleDown />
-      </Button>
+
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant={"outline"} className="flex items-center gap-1">
+            Skills
+            {/* <FaAngleDown /> */}
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogDescription>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant={"outline"} className="flex items-center gap-1">
+            Domain
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Domains</DialogTitle>
+            <DialogDescription>
+              This action cannot be undone. This will permanently delete your
+              account and remove your data from our servers.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
