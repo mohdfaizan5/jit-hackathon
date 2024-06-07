@@ -23,7 +23,7 @@ const Navbar = () => {
             height={32}
             alt="logo"
           />
-          QuanTech
+          jobseekz
         </div>
       </Link>
       <nav>

@@ -12,15 +12,15 @@ const Footer = () => {
             height={32}
             alt="logo"
           />{" "}
-          QuanTech
+          jobseekz
         </div>
       </nav>
       <div></div>
       <section className="text-xs flex items-center flex-col">
         <p>Browse by: Companies Jobs Locations Communities</p>
         <p className="font-cal">
-          Copyright © 2008-2024, QuanTech LLC. &ldquo; QuanTech &rdquo; and logo
-          are registered trademarks of QuanTech LLC.
+          Copyright © 2008-2024, jobseekz LLC. &ldquo; jobseekz &rdquo; and logo
+          are registered trademarks of jobseekz LLC.
         </p>
       </section>
     </footer>
