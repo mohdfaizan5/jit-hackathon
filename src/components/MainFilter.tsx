@@ -1,7 +1,6 @@
 import React from "react";
 import { IoIosOptions } from "react-icons/io";
 import { Button } from "./ui/button";
-import { FaAngleDown } from "react-icons/fa";
 import {
   Select,
   SelectContent,
@@ -17,8 +16,38 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import CheckBoxWithText from "./client/CheckBoxWithText";
+
+const domains = [
+  "Digital",
+  "Consulting",
+  "Technology",
+  "Operations",
+  "Marketing",
+  "Software",
+  "Digital Media",
+  "E-commerce",
+  "Retail",
+  "Cloud",
+];
+
+const skills = [
+  "Javascript",
+  "Python",
+  "Java",
+  "Figma",
+  "Typescript",
+  "Angularjs",
+  "Nextjs",
+  "Reactjs",
+  "Figma",
+  "UI/UX",
+  "AI",
+  "Machine Learning",
+];
 
 const MainFilter = () => {
+
   return (
     <section className="flex items-center gap-1 justify-start w-screen mt-4">
       <Dialog>
@@ -38,7 +67,6 @@ const MainFilter = () => {
           </DialogHeader>
         </DialogContent>
       </Dialog>
-      {/* <Button variant={"outline"}>Location</Button> */}
       <Select>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Job near me" />
@@ -61,8 +89,6 @@ const MainFilter = () => {
         </SelectContent>
       </Select>
 
-      {/* popup */}
-
       <Dialog>
         <DialogTrigger asChild>
           <Button variant={"outline"} className="flex items-center gap-1">
@@ -72,10 +98,13 @@ const MainFilter = () => {
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
-            <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+            <DialogTitle className="mb-3">Are you absolutely sure?</DialogTitle>
+            <DialogDescription className="grid grid-cols-2 gap-1">
+              {skills.map((domain) => (
+                <CheckBoxWithText id={domain.toLowerCase().replaceAll(" ", "")}>
+                  {domain}
+                </CheckBoxWithText>
+              ))}
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
@@ -88,10 +117,13 @@ const MainFilter = () => {
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Domains</DialogTitle>
-            <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+            <DialogTitle className="mb-3">Domains</DialogTitle>
+            <DialogDescription className="grid grid-cols-2  gap-1">
+              {domains.map((domain) => (
+                <CheckBoxWithText id={domain.toLowerCase().replaceAll(" ", "")}>
+                  {domain}
+                </CheckBoxWithText>
+              ))}
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

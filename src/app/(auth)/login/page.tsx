@@ -22,32 +22,20 @@ const page = () => {
           <span className="text-xs">or</span>
           <Separator orientation="horizontal" className="w-24" />
         </div>
-        <form
-          className=""
-          action={async () => {
-            "use server";
-            await signIn("github");
-          }}
-        >
+        <form>
           <Button className="flex items-center gap-3 w-60" variant={"outline"}>
             <FaLinkedin size={24} />
             Login with LinkedIn
           </Button>
         </form>
-        <form
-          className=""
-          action={async () => {
-            "use server";
-            await signIn("github");
-          }}
-        >
+        <form>
           <Button className="flex items-center gap-3 w-60" variant={"outline"}>
             <FaGoogle size={24} />
             Login with Google
           </Button>
         </form>
+
         <form
-          className=""
           action={async () => {
             "use server";
             await signIn("github");
@@ -59,6 +47,7 @@ const page = () => {
           </Button>
         </form>
       </section>
+
       <div className="">
         <h1 className="text-3xl font-cal text-center">Login</h1>
         <Image
