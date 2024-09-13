@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 // Array of job data
@@ -78,21 +79,21 @@ export default function Caraousal() {
                 <Card>
                   <CardContent className="flex  aspect-video items-center justify-center p-6">
                     <span className="text-4xl font-semibold">
-                      <Image
-                        src={_.img}
-                        alt="company logo"
-                        width={80}
-                        height={80}
-                      />
+                      <Link href="/company/lkajsdf" key={index}>
+                        <Image
+                          src={_.img}
+                          alt="company logo"
+                          width={80}
+                          height={80}
+                        />
+                      </Link>
                     </span>
                   </CardContent>
                 </Card>
                 <div className="p-2">
                   <h1 className="text-2xl font-semibold">{_.jobTitle}</h1>
                   <div className="flex text-xs opacity-75 gap-3">
-                    <p>
-                      Software Development
-                    </p>
+                    <p>Software Development</p>
                     <p>1200+ Employees</p>
                     <p>WashingTon</p>
                   </div>
