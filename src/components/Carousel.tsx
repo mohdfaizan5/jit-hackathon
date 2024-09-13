@@ -11,24 +11,66 @@ import React from "react";
 
 // Array of job data
 const jobData = [
-  {img: "/languages/figma.png",jobTitle: "Software Engineer", salary: 75000, pincode: "560001" },
-  {img: "/languages/figma.png", jobTitle: "Data Analyst", salary: 65000, pincode: "110001" },
-  {img: "/languages/figma.png", jobTitle: "Product Manager", salary: 90000, pincode: "400001" },
-  {img: "/languages/figma.png", jobTitle: "Graphic Designer", salary: 50000, pincode: "600001" },
-  {img: "/languages/figma.png", jobTitle: "Marketing Specialist", salary: 55000, pincode: "700001" },
-  {img: "/languages/figma.png", jobTitle: "Sales Executive", salary: 45000, pincode: "500001" },
-  {img: "/languages/figma.png", jobTitle: "Human Resources Manager", salary: 80000, pincode: "302001" },
-  {img: "/languages/figma.png", jobTitle: "Financial Analyst", salary: 85000, pincode: "380001" },
-  {img: "/languages/figma.png", jobTitle: "Web Developer", salary: 72000, pincode: "560076" },
-  
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Microsoft",
+    salary: 75000,
+    pincode: "560001",
+  },
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Data Analyst",
+    salary: 65000,
+    pincode: "110001",
+  },
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Product Manager",
+    salary: 90000,
+    pincode: "400001",
+  },
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Graphic Designer",
+    salary: 50000,
+    pincode: "600001",
+  },
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Marketing Specialist",
+    salary: 55000,
+    pincode: "700001",
+  },
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Sales Executive",
+    salary: 45000,
+    pincode: "500001",
+  },
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Human Resources Manager",
+    salary: 80000,
+    pincode: "302001",
+  },
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Financial Analyst",
+    salary: 85000,
+    pincode: "380001",
+  },
+  {
+    img: "/languages/figma.png",
+    jobTitle: "Web Developer",
+    salary: 72000,
+    pincode: "560076",
+  },
 ];
-
-
 
 export default function Caraousal() {
   return (
     <div className="w-full max-h-full flex items-center justify-center">
-      <Carousel className="w-full  max-w-80">
+      <Carousel className=" w-96">
         <CarouselContent>
           {jobData.map((_, index) => (
             <CarouselItem key={index}>
@@ -36,23 +78,32 @@ export default function Caraousal() {
                 <Card>
                   <CardContent className="flex  aspect-video items-center justify-center p-6">
                     <span className="text-4xl font-semibold">
-                      <Image src={_.img} alt='company logo' width={80} height={80}/>
+                      <Image
+                        src={_.img}
+                        alt="company logo"
+                        width={80}
+                        height={80}
+                      />
                     </span>
                   </CardContent>
                 </Card>
                 <div className="p-2">
                   <h1 className="text-2xl font-semibold">{_.jobTitle}</h1>
-                  <p>
-                    {_.pincode} | {_.salary}
-                  </p>
+                  <div className="flex text-xs opacity-75 gap-3">
+                    <p>
+                      Software Development
+                    </p>
+                    <p>1200+ Employees</p>
+                    <p>WashingTon</p>
+                  </div>
                 </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
 
-        <CarouselPrevious />
-        <CarouselNext />
+        {/* <CarouselPrevious />
+        <CarouselNext /> */}
       </Carousel>
     </div>
   );

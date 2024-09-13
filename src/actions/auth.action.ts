@@ -6,7 +6,7 @@ import { signInFormSchema, signUpFormSchema } from "@/types/index";
 import { z } from "zod";
 
 const signUpAction = async (data: z.infer<typeof signUpFormSchema>) => {
-    console.table(data);
+    console.table("sigup actions");
 
     try {
         const existingUser = await prisma.user.findUnique({
@@ -14,6 +14,8 @@ const signUpAction = async (data: z.infer<typeof signUpFormSchema>) => {
                 email: data.email,
             },
         });
+
+        console.log("existing user", existingUser);
 
         if (existingUser) {
             return {

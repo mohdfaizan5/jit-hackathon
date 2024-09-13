@@ -10,31 +10,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  password String
-  name  String?
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  upadtedAt DateTime @updatedAt
 }
 
+model Compancy {
+  id        Int      @id @default(autoincrement())
+  name      String
+  job       Job[]
+  salary    Int
+  location  String
+  industry  String
+  createdAt DateTime @default(now())
+  upadtedAt DateTime @updatedAt
+}
 
-// model User {
-//   id Int @id @default(autoincrement())
-//   name String
-//   post Post[]
-// }
-// model Post {
-//   id Int @id @default(autoincrement())
-//   title String
-//   descrpition String
-//   postid Int
-//   user User @relation(fields: [postid] ,references: [id])
-//   comments Comments[]
-// }
-
-// model Comments {
-//   id Int @id @default(autoincrement())
-//   commentid Int
-//   comment Post @relation(fields: [commentid],references: [id])
-// }
+model Job {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  companyId   Int
+  company     Compancy @relation(fields: [companyId], references: [id])
+  createdAt   DateTime @default(now())
+  upadtedAt   DateTime @updatedAt
+}

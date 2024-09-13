@@ -35,7 +35,7 @@ const SignInForm = () => {
       const result = await signInAction(values);
       if (result.success) {
         toast.success("Login Success");
-        router.push("/courses");
+        router.push("/app");
       } else {
         console.log("Login Failed", result.error);
         toast.error(`Login Failed: ${result.error}`);
@@ -82,7 +82,7 @@ const SignInForm = () => {
         />
 
         <Button className="w-full">Login</Button>
-        <Link className="underline text-primary text-sm" href={"/signup"}>
+        <Link className="underline text-primary text-sm" href={"/register"}>
           Don&apos;t have an account?
         </Link>
       </form>

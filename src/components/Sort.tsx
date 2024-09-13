@@ -1,66 +1,60 @@
-import React from 'react'
-import { Button } from "@/components/ui/button"
+import React from "react";
+import { BsSortAlphaDown } from "react-icons/bs";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-function Sort() {
-  return (
-    <div className='mb-[10px] text-center'>
-       <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button className='' variant="outline">Sort By</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[400px] h-80 ml-16">
-        
-      <DropdownMenuLabel>Filters</DropdownMenuLabel>
-      <DropdownMenuSeparator/>
-        
-      <div className='flex items-center'>
-      <div className='mt-5 flex flex-col w-28 border-r pr-5'>
-        <DropdownMenuItem>Industry</DropdownMenuItem>
-        <DropdownMenuSeparator/>
-        <DropdownMenuItem>Industry</DropdownMenuItem>
-        <DropdownMenuSeparator/>
-        <DropdownMenuItem>Industry</DropdownMenuItem>
-        <DropdownMenuSeparator/>
-        <DropdownMenuItem>Industry</DropdownMenuItem>
-        <DropdownMenuSeparator/>
-        <DropdownMenuItem>Industry</DropdownMenuItem>
-        <DropdownMenuSeparator/>
-      </div> 
-      <div className='-mt-3 flex flex-col items-center ml-5  '>
-        <div className='flex'>
-        <input type="checkbox" name="" id="" /> <DropdownMenuItem>Location</DropdownMenuItem></div>
-        <div className='flex'>
-        <input type="checkbox" name="" id="" /> <DropdownMenuItem>Location</DropdownMenuItem></div>
-        <div className='flex'>
-        <input type="checkbox" name="" id="" /> <DropdownMenuItem>Location</DropdownMenuItem></div>
-        <div className='flex'>
-        <input type="checkbox" name="" id="" /> <DropdownMenuItem>Location</DropdownMenuItem></div>
-        <div className='flex'>
-        <input type="checkbox" name="" id="" /> <DropdownMenuItem>Location</DropdownMenuItem></div>
-       
-        
-      </div>
-      </div>
-        
-        
-          
-      </DropdownMenuContent>
-    </DropdownMenu>
-    </div>
-  )
-}
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "./ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export default Sort
+const SortBy = () => {
+  return (
+    <div>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button size={"sm"} className="scale-75">
+            <BsSortAlphaDown />
+            Sort
+          </Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Filter</DialogTitle>
+            <DialogDescription>
+              <Tabs defaultValue="account" className="w-[400px] flex">
+                <TabsList className="flex flex-col items-stretch h-full text-left">
+                  <TabsTrigger value="industry">Industry</TabsTrigger>
+                  <TabsTrigger value="companySize">Company Size</TabsTrigger>
+                  <TabsTrigger value="speciality">Speciality</TabsTrigger>
+                  <TabsTrigger value="city">City</TabsTrigger>
+                  <TabsTrigger value="technology">Technology</TabsTrigger>
+                </TabsList>
+                <TabsContent value="industry"  className="p-2">
+                  Make changes to your account here.
+                </TabsContent>
+                <TabsContent value="companySize" className="p-2">
+                  companySize Change your password here.
+                </TabsContent>
+                <TabsContent value="speciality" className="p-2">
+                  speciality Change your password here.
+                </TabsContent>
+                <TabsContent value="city" className="p-2">
+                  city Change your password here.
+                </TabsContent>
+                <TabsContent value="technology" className="p-2">
+                  technology Change your password here.
+                </TabsContent>
+              </Tabs>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+};
+
+export default SortBy;
