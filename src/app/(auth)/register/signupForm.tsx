@@ -14,6 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+// import { signUpFormSchema } from "@/types/forms";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import Link from "next/link";

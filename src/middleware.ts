@@ -1,9 +1,9 @@
 // ./middleware
 import { auth } from "@/lib/auth";
 import { NextResponse } from "next/server";
- 
+
 const publicRoutes = ["/", "/login", "/signup"]; // Add your public routes here
- 
+
 export default auth((req) => {
   // const path = req.nextUrl.pathname;
   // if (publicRoutes.includes(path)) NextResponse.next();
@@ -15,7 +15,7 @@ export default auth((req) => {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 });
- 
+
 export const config = {
-  matcher: ["/app", "/admin/:path*"],
+  matcher: ["/app", "/profile", "/search", "/company"],
 };
