@@ -6,25 +6,21 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 import React from "react";
 
 // Array of job data
 const jobData = [
-  { jobTitle: "Software Engineer", salary: 75000, pincode: "560001" },
-  { jobTitle: "Data Analyst", salary: 65000, pincode: "110001" },
-  { jobTitle: "Product Manager", salary: 90000, pincode: "400001" },
-  { jobTitle: "Graphic Designer", salary: 50000, pincode: "600001" },
-  { jobTitle: "Marketing Specialist", salary: 55000, pincode: "700001" },
-  { jobTitle: "Sales Executive", salary: 45000, pincode: "500001" },
-  { jobTitle: "Human Resources Manager", salary: 80000, pincode: "302001" },
-  { jobTitle: "Financial Analyst", salary: 85000, pincode: "380001" },
-  { jobTitle: "Web Developer", salary: 72000, pincode: "560076" },
-  { jobTitle: "IT Support Specialist", salary: 48000, pincode: "122001" },
-  { jobTitle: "Content Writer", salary: 40000, pincode: "411001" },
-  { jobTitle: "Business Analyst", salary: 78000, pincode: "560034" },
-  { jobTitle: "Operations Manager", salary: 87000, pincode: "390001" },
-  { jobTitle: "UX/UI Designer", salary: 67000, pincode: "700091" },
-  { jobTitle: "Digital Marketing Executive", salary: 53000, pincode: "600096" },
+  {img: "/languages/figma.png",jobTitle: "Software Engineer", salary: 75000, pincode: "560001" },
+  {img: "/languages/figma.png", jobTitle: "Data Analyst", salary: 65000, pincode: "110001" },
+  {img: "/languages/figma.png", jobTitle: "Product Manager", salary: 90000, pincode: "400001" },
+  {img: "/languages/figma.png", jobTitle: "Graphic Designer", salary: 50000, pincode: "600001" },
+  {img: "/languages/figma.png", jobTitle: "Marketing Specialist", salary: 55000, pincode: "700001" },
+  {img: "/languages/figma.png", jobTitle: "Sales Executive", salary: 45000, pincode: "500001" },
+  {img: "/languages/figma.png", jobTitle: "Human Resources Manager", salary: 80000, pincode: "302001" },
+  {img: "/languages/figma.png", jobTitle: "Financial Analyst", salary: 85000, pincode: "380001" },
+  {img: "/languages/figma.png", jobTitle: "Web Developer", salary: 72000, pincode: "560076" },
+  
 ];
 
 
@@ -39,7 +35,9 @@ export default function Caraousal() {
               <div className="p-1">
                 <Card>
                   <CardContent className="flex  aspect-video items-center justify-center p-6">
-                    <span className="text-4xl font-semibold">{index + 1}</span>
+                    <span className="text-4xl font-semibold">
+                      <Image src={_.img} alt='company logo' width={80} height={80}/>
+                    </span>
                   </CardContent>
                 </Card>
                 <div className="p-2">
