@@ -1,53 +1,26 @@
-import React from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import Image from "next/image";
-import { ModeToggle } from "./client/DarkModeToggle";
-import Link from "next/link";
-
-const Navbar = () => {
+import React from 'react'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { IoLocationOutline } from "react-icons/io5";
+function Navbar() {
   return (
-    <header className="flex items-center justify-between  py-5 ">
-      <Link href={"/"}>
-        <div className="text-xl font-semibold flex items-center gap-1">
-          <Image
-            src={"/logos/logo-base-32x32.png"}
-            width={32}
-            height={32}
-            alt="logo"
-          />
-          jobseekz
-        </div>
-      </Link>
-      <nav>
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-            <Avatar>
-              <AvatarImage src="https://github.com/mohdfaizan5.png" />
-              <AvatarFallback>MF</AvatarFallback>
-            </Avatar>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <ModeToggle />
-            </DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuItem>Subscription</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </nav>
-    </header>
-  );
-};
+    <div className='flex items-center justify-between '>
+     <div className='flex items-center '>
+      <div>
+      <IoLocationOutline size={35} />
+      </div>
+      <div>
+        <h1 className='font-bold '>Home</h1>
+        <p className='text-sm leading-3'>Kormangala</p>
+      </div>
+     </div>
+     <div>
+     <Avatar>
+        <AvatarImage src="" />
+        <AvatarFallback className='border-2 border-black'>LN</AvatarFallback>
+      </Avatar>
+     </div>
+    </div>
+  )
+}
 
-export default Navbar;
+export default Navbar
