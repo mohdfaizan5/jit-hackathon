@@ -21,7 +21,7 @@ export default function Caraousal({ companies }: { companies: Company[] }) {
                 <Card>
                   <CardContent className="flex  aspect-video items-center justify-center p-6">
                     <span className="text-4xl font-semibold">
-                      <Link href="/company/lkajsdf" key={index}>
+                      <Link href={`/company/${_.name}`} key={index}>
                         <Image
                           src={_.logo as string}
                           alt="company logo"

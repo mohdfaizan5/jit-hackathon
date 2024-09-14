@@ -1,19 +1,33 @@
-import prisma from "@/lib/db";
 import React from "react";
 import { data } from "../dummy";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import { notFound } from "next/navigation";
+import { getCompanyBySlug } from "@/actions/job.action";
 
-const page = ({
+const page = async ({
   params,
 }: {
   params: {
     name: string;
   };
 }) => {
+  // TODO:
+  // search for that company if found render
+  // if not you
+  // notFound();
+  // const company = await getCompanyBySlug({ slug: "microsoft" });
+  // if (!company) {
+  //   notFound()
+  // } else {
+
+  // }
+  console.log(params.name);
+  // const company = await getCompanyBySlug({ slug: params });
   return (
     <section className="flex flex-col px-5 py-5 gap-5">
+      <Navbar />
       <div key={"index"}>
         <div className="p-1">
           <Card>

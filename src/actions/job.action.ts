@@ -22,4 +22,13 @@ const getCompanyData = async () => {
     return company
 }
 
-export { getCompaniesByKey, getCompanyData }
+
+const getCompanyBySlug = async ({ slug }: { slug: string }) => {
+    await prisma.company.findMany({
+        where: {
+            slug
+        }
+    })
+}
+
+export { getCompaniesByKey, getCompanyData, getCompanyBySlug }
