@@ -1,5 +1,5 @@
 import { getCompaniesByKey } from "@/actions/job.action";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar";
 import SearchBar from "@/components/search-bar";
 import Image from "next/image";
 import React from "react";

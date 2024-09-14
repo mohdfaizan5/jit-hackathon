@@ -9,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function Caraousal() {
+export default function CompanyCarousel() {
   return (
     <div className="w-full max-h-full flex items-center justify-center">
       <Carousel className=" w-96">

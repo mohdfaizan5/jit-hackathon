@@ -11,7 +11,7 @@ import {
 import { Button } from "./ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const SortBy = () => {
+const SortingButton = () => {
   return (
     <div>
       <Dialog>
@@ -57,4 +57,4 @@ const SortBy = () => {
   );
 };
 
-export default SortBy;
+export default SortingButton;
