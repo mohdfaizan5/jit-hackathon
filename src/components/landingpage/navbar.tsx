@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Logo from "./logo";
+import { Menu } from "lucide-react";
 
-const navbar = () => {
+const Navbar = () => {
   return (
-    <div>navbar</div>
-  )
-}
+    <header className="border-b py-4 px-5 flex items-center justify-between">
+      <Logo />
+      <Menu size={26} />
+    </header>
+  );
+};
 
-export default navbar
+export default Navbar;

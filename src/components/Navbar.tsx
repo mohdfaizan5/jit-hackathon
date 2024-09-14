@@ -2,13 +2,14 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { IoLocationOutline } from "react-icons/io5";
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "./landingpage/logo";
 function Navbar() {
   return (
     <div className="flex items-center justify-between ">
       <div className="flex items-center ">
-        <div>
-          <IoLocationOutline size={32} />
-        </div>
+        <Logo />
+        <div>{/* <IoLocationOutline size={32} /> */}</div>
         <div className="ml-1">
           <h3 className="text-[18px]">Home</h3>
           <p className="text-xs leading-2">Kormangala</p>

@@ -2,7 +2,7 @@
 import SearchBar from "@/components/search-bar";
 import CompanyCarousel from "@/components/company-carousel";
 import React from "react";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar";
 
 import CompanyCards from "@/components/company-cards";
 import SortingButton from "@/components/sorting-button";
@@ -16,7 +16,7 @@ const page = async () => {
       <Navbar />
       <SearchBar />
       <SortingButton />
-      <CompanyCarousel />
+      <CompanyCarousel companies={company} />
       <CompanyCards />
       {/* <section className="border w-24 flex justify-center py-2 ">
         <button onClick={()=>alert('Sorting tabs')} className="flex items-center gap-2">

@@ -47,10 +47,10 @@ const SignInForm = () => {
   };
 
   return (
-    <Form {...form}>
-      <form
+    <Form {...form} >
+      <form 
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col items-center justify-center gap-2"
+        className="flex flex-col items-center justify-center gap-2 border border-input rounded-xl max-w-96 p-5"
       >
         <FormField
           name="email"
