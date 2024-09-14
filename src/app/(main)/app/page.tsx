@@ -3,7 +3,7 @@ import SearchBar from "@/components/search-bar";
 import Caraousal from "@/components/Carousel";
 import React from "react";
 import CompanyCards from "@/components/CompanyCards";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 import SortBy from "@/components/Sort";
 
 const page = () => {

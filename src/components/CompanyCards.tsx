@@ -6,53 +6,46 @@ function CompanyCards() {
   const programmingLanguages = [
     {
       src: "/languages/python.png",
-      title: "Python",
+      title: "Gaming",
     },
     {
       src: "/languages/js.png",
-      title: "JavaScript",
+      title: "Business Software",
     },
     {
       src: "/languages/typescript.png",
-      title: "TypeScript",
+      title: "Home and Education",
     },
     {
       src: "/languages/figma.png",
-      title: "Figma",
+      title: "Developer Tools",
     },
     {
       src: "/languages/java.png",
-      title: "Java",
+      title: "IT Services and IT Consultant",
     },
     {
       src: "/languages/figma.png",
-      title: "Figma",
+      title: "Business Consultant and services",
     },
     {
       src: "/languages/java.png",
-      title: "Java",
-    },
-  ];
-  const data = [
-    {
-      img: "/imgs/preview.svg",
-      title: "Software Engineer",
-      location: "Bangalore",
-      salary: "75000",
+      title: "Computer hardware manufacturing",
     },
     {
-      img: "/imgs/preview.svg",
-      title: "Data Analyst",
-      location: "Delhi",
-      salary: "65000",
+      src: "/languages/java.png",
+      title: "Entertainment Providers",
     },
   ];
+
+  // "software dev, it, bfsi".split(",")
+
   return (
-    <section>
-      <h1 className="text-xl text-center font-bold ">
+    <section className="">
+      <h1 className="text-center text-2xl mt-10 mb-2">
         What are you looking for
       </h1>
-      <section className="flex py-5 gap-7 flex-wrap mx-auto w-96">
+      <section className="grid py-5 gap-5 grid-cols-3 grid-rows-3 mx-auto w-96">
         {programmingLanguages.map(({ src, title }) => (
           <EachLanguageContainer title={title} src={src} key={src} />
         ))}
@@ -76,7 +69,9 @@ const EachLanguageContainer = ({
         height={100}
         alt="javascript icon"
       />
-      <h3 className="text-xs font-extralight capitalize">{title}</h3>
+      <h3 className="text-xs font-light text-pretty text-center capitalize">
+        {title}
+      </h3>
     </div>
   );
 };
