@@ -1,12 +1,16 @@
-"use client";
+// "use client";
 import SearchBar from "@/components/search-bar";
 import CompanyCarousel from "@/components/company-carousel";
 import React from "react";
-import CompanyCards from "@/components/company-cards";
 import Navbar from "@/components/navbar";
-import SortingButton from "@/components/sorting-button";
 
-const page = () => {
+import CompanyCards from "@/components/company-cards";
+import SortingButton from "@/components/sorting-button";
+import { getCompaniesByKey } from "@/actions/job.action";
+
+const page = async () => {
+  const company = await getCompaniesByKey({ query: "" });
+  console.log(company);
   return (
     <div className=" py-3 space-y-2 px-5">
       <Navbar />
