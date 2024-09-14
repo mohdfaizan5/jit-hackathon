@@ -14,28 +14,34 @@ model User {
   id        Int      @id @default(autoincrement())
   email     String   @unique
   password  String
-  name      String
+  name      String?
   createdAt DateTime @default(now())
-  upadtedAt DateTime @updatedAt
+  // kyc -> Pan card, photo
+  // isPremium 
+  // councling stuff
+  // interest (industry selection)
 }
 
-model Compancy {
+model Company {
   id        Int      @id @default(autoincrement())
   name      String
   job       Job[]
-  salary    Int
-  location  String
+  logo      String?
+  location  String?
+  // specialities String[]
   industry  String
+  overview  String?
   createdAt DateTime @default(now())
-  upadtedAt DateTime @updatedAt
 }
 
 model Job {
   id          Int      @id @default(autoincrement())
   title       String
-  description String
+  description String?
   companyId   Int
-  company     Compancy @relation(fields: [companyId], references: [id])
+  company     Company  @relation(fields: [companyId], references: [id])
   createdAt   DateTime @default(now())
-  upadtedAt   DateTime @updatedAt
+  salary      Int?
+  keywords    String?
+  // qualification/job requirements
 }
