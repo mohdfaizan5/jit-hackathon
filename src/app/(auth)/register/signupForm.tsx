@@ -108,8 +108,8 @@ const SignUpForm = () => {
             </FormItem>
           )}
         />
-        <Button>Register</Button>
-        <Link className="text-sm mt-5 text-blue-600" href="/login">
+        <Button className="w-full mt-5">Register</Button>
+        <Link className="text-sm mt-5 text-primary/60" href="/login">
           Already have an account?
         </Link>
       </form>

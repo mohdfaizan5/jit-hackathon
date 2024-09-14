@@ -16,7 +16,7 @@ const page = async () => {
       <Navbar />
       <SearchBar />
       <SortingButton />
-      <CompanyCarousel />
+      <CompanyCarousel companies={company} />
       <CompanyCards />
       {/* <section className="border w-24 flex justify-center py-2 ">
         <button onClick={()=>alert('Sorting tabs')} className="flex items-center gap-2">

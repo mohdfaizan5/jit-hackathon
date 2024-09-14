@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroSection3() {
   return (
-    <div className="px-4 pt-20 pb-16 mx-auto text-center max-w-7xl sm:px-6 lg:px-8 lg:pt-32">
+    <div className="px-4 pt-20 pb-16 mx-auto text-center bg-white max-w-7xl sm:px-6 lg:px-8 lg:pt-32">
       <h1 className="max-w-4xl mx-auto text-5xl font-medium tracking-tight font-display text-slate-900 sm:text-7xl">
         Jobs{" "}
         <span className="relative text-primary whitespace-nowrap">
@@ -25,7 +25,7 @@ export default function HeroSection3() {
       </p>
       <div className="flex justify-center mt-10 gap-x-6">
         <Link href="/app">
-          <Button>Get 6 months free</Button>
+          <Button>Get started</Button>
         </Link>
         <Button variant="outline">
           <svg
