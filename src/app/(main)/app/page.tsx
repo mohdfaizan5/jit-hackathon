@@ -2,7 +2,7 @@
 import SearchBar from "@/components/search-bar";
 import CompanyCarousel from "@/components/company-carousel";
 import React from "react";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 
 import CompanyCards from "@/components/company-cards";
 import SortingButton from "@/components/sorting-button";

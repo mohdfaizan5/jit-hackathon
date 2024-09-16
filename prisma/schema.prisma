@@ -16,15 +16,18 @@ model User {
 }
 
 model Company {
-  id        Int      @id @default(autoincrement())
-  name      String
-  logo      String?
-  location  String?
-  industry  String
-  overview  String?
-  createdAt DateTime @default(now())
-  slug      String?  @unique
-  job       Job[]
+  id           Int      @id @default(autoincrement())
+  name         String
+  logo         String?
+  location     String? // This can be used for City filter
+  industry     String
+  companySize  String?
+  overview     String?
+  createdAt    DateTime @default(now())
+  slug         String?  @unique
+  specialties  String? // New field for Speciality filter
+  technologies String? // New field for Technology filter
+  job          Job[]
 }
 
 model Job {
