@@ -1,11 +1,12 @@
+import { Company } from "@prisma/client";
 import Image from "next/image";
 import React from "react";
 
-function SearchCompanies({ company, index }: any) {
+function CompanyCardSearchCard({ company }: { company: Company }) {
   return (
     <div>
       <div className="flex items-center gap-3 ">
-        <div className="h-[50px] w-[50px] shadow-sm rounded-md border-2">
+        <div className="h-[50px] w-[50px] shadow-sm rounded-md border-2 flex flex-col items-center justify-center">
           <Image
             width={50}
             height={50}
@@ -29,4 +30,4 @@ function SearchCompanies({ company, index }: any) {
   );
 }
 
-export default SearchCompanies;
+export default CompanyCardSearchCard;

@@ -17,11 +17,11 @@ export default function HeroSection3() {
           </svg>
           <span className="relative">made simple</span>
         </span>{" "}
-        for small businesses.
+        for everyone.
       </h1>
       <p className="max-w-2xl mx-auto mt-6 text-lg tracking-tight text-slate-700">
-        Most bookkeeping software is accurate, but hard to use. We make the
-        opposite trade-off, and hope you don’t get audited.
+        Find the perfect job for you, with the help of our AI-powered job
+        matching system.
       </p>
       <div className="flex justify-center mt-10 gap-x-6">
         <Link href="/app">

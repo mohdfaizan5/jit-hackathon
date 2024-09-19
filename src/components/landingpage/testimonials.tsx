@@ -4,11 +4,12 @@ const testimonials = [
   [
     {
       content:
-        "TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.",
+        // write a testimonial here explainning how much you love the product and how it has helped Ananth to get students and colleges throughout India.
+        "I have been using Quantech Origins for a while now and I must say that it has been a great experience. I have been able to get students and colleges throughout India. I am very happy with the product and I would recommend it to anyone who is looking for a great experience.",
       author: {
-        name: "Sheryl Berge",
-        role: "CEO at Lynch LLC",
-        image: "https://github.com/muhammedtahir1.png",
+        name: "Ananth P Mallya",
+        role: "Founder of Quantech Origins",
+        image: "https://media.licdn.com/dms/image/v2/C5603AQEEXgxbKRiR6Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1662395631805?e=1732147200&v=beta&t=GPXdoOLp8pZ4p0bc2BQw0G5eKU20LFcIm4TMoX1mmUw",
       },
     },
     {
@@ -24,11 +25,11 @@ const testimonials = [
   [
     {
       content:
-        "The best part about TaxPal is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.",
+        "This has helped my students so much. I can’t believe how much time I used to spend on this stuff. Many of our students have been able to get a satisfied job throughout India.",
       author: {
-        name: "Leland Kiehn",
-        role: "Founder of Kiehn and Sons",
-        image: "https://github.com/mohdfaizan5.png",
+        name: "Padma Reddy",
+        role: "Professor at Sai Vidya Institute of Technology",
+        image: "https://media.licdn.com/dms/image/v2/C4D03AQFH6legTJmhIw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517595077981?e=1732147200&v=beta&t=PjPI-1Xe9YELaSYl6_kcgbc7si5uP9aWRETJeXL5R08",
       },
     },
     {
@@ -80,13 +81,11 @@ export function Testimonials3() {
     >
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Loved by businesses worldwide.
+          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl text-balance">
+            Loved by students, colleges throughout India.
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Our software is so simple that people can’t help but fall in love
-            with it. Simplicity is easy when you just skip tons of
-            mission-critical features.
+            Here are some of the things our students and colleges have to say about us.
           </p>
         </div>
         <ul

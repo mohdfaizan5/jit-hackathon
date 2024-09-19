@@ -1,37 +1,46 @@
 import React from "react";
 import { Card } from "./ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 function CompanyCards() {
   const programmingLanguages = [
     {
       src: "/languages/python.png",
-      title: "Gaming",
+      title: "Social Media",
+    },
+    // {
+    //   src: "/languages/js.png",
+    //   title: "Business Software",
+    // },
+    // {
+    //   src: "/languages/typescript.png",
+    //   title: "Home and Education",
+    // },
+    {
+      src: "/languages/figma.png",
+      title: "Technology",
     },
     {
       src: "/languages/js.png",
-      title: "Business Software",
+      title: "Semiconductors",
     },
     {
       src: "/languages/typescript.png",
-      title: "Home and Education",
-    },
-    {
-      src: "/languages/figma.png",
       title: "Developer Tools",
     },
     {
       src: "/languages/java.png",
       title: "IT Services and IT Consultant",
     },
-    {
-      src: "/languages/figma.png",
-      title: "Business Consultant and services",
-    },
-    {
-      src: "/languages/java.png",
-      title: "Computer hardware manufacturing",
-    },
+    // {
+    //   src: "/languages/figma.png",
+    //   title: "Business Consultant and services",
+    // },
+    // {
+    //   src: "/languages/java.png",
+    //   title: "Computer hardware manufacturing",
+    // },
     {
       src: "/languages/java.png",
       title: "Entertainment Providers",
@@ -62,13 +71,16 @@ const EachLanguageContainer = ({
 }) => {
   return (
     <div className="flex flex-col  items-center gap-2">
-      <Image
-        className="rounded-full shadow-2xl object-center object-contain hover:shadow-black/20 hover:shadow-lg size-14 "
-        src={src}
-        width={100}
-        height={100}
-        alt="javascript icon"
-      />
+      <Link href={`/search?industry=${title}`}>
+
+        <Image
+          className="rounded-full shadow-2xl object-center object-contain hover:shadow-black/20 hover:shadow-lg size-14 "
+          src={src}
+          width={100}
+          height={100}
+          alt="javascript icon"
+        />
+      </Link>
       <h3 className="text-xs font-light text-pretty text-center capitalize">
         {title}
       </h3>

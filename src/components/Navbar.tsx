@@ -6,13 +6,13 @@ import Image from "next/image";
 import Logo from "./landingpage/logo";
 function Navbar() {
   return (
-    <div className="flex items-center justify-between ">
+    <header className="flex items-center justify-between  border-b pb-3">
       <div className="flex items-center ">
         <Logo />
         <div>{/* <IoLocationOutline size={32} /> */}</div>
         <div className="ml-1">
-          <h3 className="text-[18px]">Home</h3>
-          <p className="text-xs leading-2">Kormangala</p>
+          <h3 className="text-[18px] mb-0">Home</h3>
+          <p className="text-xs -mt-2">Kormangala</p>
         </div>
       </div>
       <Link href={"/profile"}>
@@ -21,7 +21,7 @@ function Navbar() {
           <AvatarFallback className="border-2 border-black">LN</AvatarFallback>
         </Avatar>
       </Link>
-    </div>
+    </header>
   );
 }
 
