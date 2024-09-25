@@ -29,7 +29,7 @@ export default function WorkStatusForm() {
               >
                 <RadioGroupItem value="experienced" id="experienced" className="sr-only" />
                 <Briefcase className="mb-2 h-6 w-6" />
-                <span className="font-semibold">I'm experienced</span>
+                <span className="font-semibold">I{"'"}m experienced</span>
                 <span className="text-sm text-muted-foreground">I have work experience (excluding internships)</span>
               </Label>
               <Label
@@ -39,8 +39,8 @@ export default function WorkStatusForm() {
               >
                 <RadioGroupItem value="fresher" id="fresher" className="sr-only" />
                 <GraduationCap className="mb-2 h-6 w-6" />
-                <span className="font-semibold">I'm a fresher</span>
-                <span className="text-sm text-muted-foreground">I am a student/ Haven't worked after graduation</span>
+                <span className="font-semibold">I{"'"}m a fresher</span>
+                <span className="text-sm text-muted-foreground">I am a student/ Haven{"'"}t worked after graduation</span>
               </Label>
             </RadioGroup>
           </CardContent>

@@ -34,7 +34,7 @@ const SignUpForm = () => {
       email: "",
       password: "",
       confirmPassword: "",
-      phone: 1234567890,
+      phone: "",
     },
   });
   const router = useRouter();
@@ -108,18 +108,18 @@ const SignUpForm = () => {
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="experienced" className="flex items-center justify-center">
                 <Briefcase className="w-4 h-4 mr-2" />
-                I'm experienced
+                I{"'"}m experienced
               </TabsTrigger>
               <TabsTrigger value="fresher" className="flex items-center justify-center">
                 <GraduationCap className="w-4 h-4 mr-2" />
-                I'm a fresher
+                I{"'"}m a fresher
               </TabsTrigger>
             </TabsList>
             <TabsContent value="experienced" className="mt-2 text-sm text-muted-foreground">
               I have work experience (excluding internships)
             </TabsContent>
             <TabsContent value="fresher" className="mt-2 text-sm text-muted-foreground">
-              I am a student/ Haven't worked after graduation
+              I am a student/ Haven{"'"}t worked after graduation
             </TabsContent>
           </Tabs>
         </div>
@@ -169,7 +169,7 @@ const SignUpForm = () => {
           )}
         />
         <Button className="w-full mt-5">Register</Button>
-        
+
       </form>
     </Form>
   );

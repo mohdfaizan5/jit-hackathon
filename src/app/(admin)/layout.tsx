@@ -1,28 +1,10 @@
 
-import React, { ReactNode } from 'react'
-import Link from "next/link"
+import { ReactNode } from 'react'
 import {
-  Bell,
   CircleUser,
-  Home,
-  LineChart,
-  Menu,
-  Package,
-  Package2,
-  Search,
-  ShoppingCart,
-  Users,
 } from "lucide-react"
-
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,9 +15,6 @@ import {
 } from "@/components/ui/dropdown-menu"
 import SideBarAdminMobile from '@/components/admin/side-bar-mobile'
 import SideBarAdmin from '@/components/admin/side-bar'
-
-export const description =
-  "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action."
 
 const layout = ({ children }: { children: ReactNode }) => {
   return (

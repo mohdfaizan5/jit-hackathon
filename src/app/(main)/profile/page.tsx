@@ -22,7 +22,6 @@ const page = async () => {
 
         {session?.user.isPremium ?
           <p>Your a Premium user 🔥</p>
-
           : <UpdateForPro />}
 
       </main>
