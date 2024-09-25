@@ -59,7 +59,7 @@ const page = async ({
       <div className="flex flex-col gap-3">
         <h3 className="font-semibold">All jobs</h3>
         {data.map((_, index) => (
-          <div className="flex items-center border-2 rounded-sm px-4 py-2 justify-between">
+          <div className="flex items-center border-2 rounded-sm px-4 py-2 justify-between" key={index}>
             <div>
               <h3 className="text-[18px] font-semibold  ">{_.jobs}</h3>
               <p className="text-xs opacity-75 -mt-1">{_.skills}</p>

@@ -40,18 +40,22 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         console.log("dbUser", dbUser);
         user = {
-          id: dbUser.id,
+          id: dbUser.id.toString(),
           email: dbUser.email,
           isAdmin: dbUser.isAdmin || false,
           isPremium: dbUser.isPremium || false,
         };
+
+        if (dbUser.password === credentials.password) {
+          return user;
+        }
 
         // user = {
         //   id: dbUser.id,
         //   email: dbUser.email,
         // };
 
-        return user;
+        return null;
       },
     }),
   ],

@@ -1,7 +1,21 @@
 "use server";
 
 import prisma from "@/lib/db";
-import { Company } from "@prisma/client";
+import { Company, Job } from "@prisma/client";
+
+const deleteJobById = async (id: Job["id"]) => {
+  try {
+    await prisma.company.delete({
+      where: {
+        id,
+      },
+    });
+    return true;
+  } catch (error) {
+    console.error("Error deleting job:", error);
+    return false;
+  }
+};
 
 const getCompaniesByKey = async ({
   query,
@@ -102,4 +116,4 @@ const getCompanyBySlug = async ({ slug }: { slug: string }) => {
   });
 };
 
-export { getCompaniesByKey, getCompanyBySlug, fetchCompanies };
+export { getCompaniesByKey, getCompanyBySlug, fetchCompanies, deleteJobById };

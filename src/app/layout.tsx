@@ -4,6 +4,8 @@ import "../styles/globals.css";
 import "../styles/typography.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import localFont from "next/font/local";
+import { Toaster } from "@/components/ui/sonner"
+import { SessionProvider } from "next-auth/react"
 const inter = Inter({ subsets: ["latin"] });
 
 const calsans = localFont({
@@ -35,8 +37,12 @@ export default function RootLayout({
           disableTransitionOnChange
           defaultTheme={"light"}
         >
-          {children}
+          <SessionProvider>
+
+            {children}
+          </SessionProvider>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

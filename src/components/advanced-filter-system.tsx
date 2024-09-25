@@ -1,28 +1,32 @@
+// @ts-nocheck
+// TODO: Remove the above comment after resolving the issue
 "use client"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useSession } from "next-auth/react"
+import UpdateForPro from "./update-for-pro"
 
-type FilterCategory = "Industry" | "Company size" | "Speciality" | "City" | "Technology"
+type FilterCategory = "City" | "Industry" | "Company size" | "Speciality" | "Technology"
 
 const filterCategories: Record<FilterCategory, string[]> = {
+  City: ["Delhi, IN", "Hydrabad", "Bangalore", "New York", "San Francisco", "London", "Tokyo", "Berlin"],
   Industry: ["Technology", "Social Media", "Semiconductors", "Finance", "Healthcare", "Education", "Retail"],
   "Company size": ["10", "50", "200", "500", "1000", "5000"],
   Speciality: ["Search Engine", "Cloud Computing", "Advertising", "Software", "Hardware", "Web Development", "Mobile Apps", "AI/ML", "Data Science", "Cloud Computing"],
-  City: ["Delhi, IN", "Hydrabad", "Bangalore", "New York", "San Francisco", "London", "Tokyo", "Berlin"],
   Technology: ["React", "Node.js", "TS", "C++", "Verilog", "VHDL", "Python", "Java", "AWS"]
 }
 
 
 export default function AdvancedFilterSystem() {
   const router = useRouter()
+  const { data: session } = useSession()
+
   const [activeTab, setActiveTab] = useState<FilterCategory>("Industry")
   const [filters, setFilters] = useState<Record<FilterCategory, string[]>>(
     Object.fromEntries(
@@ -61,6 +65,9 @@ export default function AdvancedFilterSystem() {
 
   if (!isOpen) return null
 
+
+
+
   return (
     <Card className="w-[340px] sm:w-[500px]">
       <Tabs value={activeTab}
@@ -77,22 +84,52 @@ export default function AdvancedFilterSystem() {
         </CardHeader>
         <CardContent>
 
-          {(Object.entries(filterCategories) as [FilterCategory, string[]][]).map(([category, items]) => (
-            <TabsContent key={category} value={category} className="mt-10 md:mt-4">
-              <div className="grid grid-cols-2 gap-2">
-                {items.map((item) => (
-                  <div key={item} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`${category}-${item}`}
-                      checked={filters[category].includes(item)}
-                      onCheckedChange={() => handleFilterChange(category, item)}
-                    />
-                    <Label htmlFor={`${category}-${item}`}>{item}</Label>
+          {(Object.entries(filterCategories) as [FilterCategory, string[]][]).map(([category, items]) => {
+            console.log(session?.user)
+            if (session?.user?.isPremium)
+              // console.log(category, items)
+              return <TabsContent key={category} value={category} className="mt-10 md:mt-4">
+                <div className="grid grid-cols-2 gap-2">
+
+                  {items.map((item) => (
+                    <div key={item} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={`${category}-${item}`}
+                        checked={filters[category].includes(item)}
+                        onCheckedChange={() => handleFilterChange(category, item)}
+                      />
+                      <Label htmlFor={`${category}-${item}`}>{item}</Label>
+                    </div>
+                  ))}
+                </div>
+              </TabsContent>
+            else {
+              if (category == "City") {
+                return <TabsContent key={category} value={category} className="mt-10 md:mt-4">
+                  <div className="grid grid-cols-2 gap-2">
+
+                    {items.map((item) => (
+                      <div key={item} className="flex items-center space-x-2">
+                        <Checkbox
+                          id={`${category}-${item}`}
+                          checked={filters[category].includes(item)}
+                          onCheckedChange={() => handleFilterChange(category, item)}
+                        />
+                        <Label htmlFor={`${category}-${item}`}>{item}</Label>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
+                </TabsContent>
+              }
+              else {
+                return <TabsContent key={category} value={category} className="mt-10 md:mt-4">
+                  <UpdateForPro />
+                </TabsContent>
+              }
+            }
+          })
+
+          }
 
         </CardContent>
         <CardFooter className="flex justify-between">
