@@ -1,10 +1,8 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { IoLocationOutline } from "react-icons/io5";
 import Link from "next/link";
-import Image from "next/image";
 import Logo from "./landingpage/logo";
-function Navbar() {
+export default function Navbar() {
   return (
     <header className="flex items-center justify-between  border-b pb-3">
       <div className="flex items-center ">
@@ -25,4 +23,3 @@ function Navbar() {
   );
 }
 
-export default Navbar;

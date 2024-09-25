@@ -8,7 +8,6 @@ import CompanyCards from "@/components/company-cards";
 import SortingButton from "@/components/sorting-button";
 import { getCompaniesByKey } from "@/actions/job.action";
 import { auth } from "@/lib/auth";
-import UpdateForPro from "@/components/update-for-pro";
 
 const page = async () => {
   const company = await getCompaniesByKey({ query: "" });

@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -16,10 +16,10 @@ model User {
   // resume
   // expirenced | fresher -> and experience years
   // fresher
-    // clg
-    // gpa
-    // interests
-    // all parameters he's looking with a job
+  // clg
+  // gpa
+  // interests
+  // all parameters he's looking with a job
   // where does it stay
   // linkedin
   // 
