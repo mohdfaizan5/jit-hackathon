@@ -2,10 +2,9 @@ import React from "react";
 import { data } from "../dummy";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import Navbar from "@/components/navbar";
 import { notFound } from "next/navigation";
 import prisma from "@/lib/db";
-// import { getCompanyBySlug } from "@/actions/job.action";
+import Navbar from "@/components/navbar-app";
 
 const page = async ({
   params,

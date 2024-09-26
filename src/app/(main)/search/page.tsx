@@ -1,5 +1,5 @@
 import { fetchCompanies, getCompaniesByKey } from "@/actions/job.action";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar-app";
 import SearchBar from "@/components/search-bar";
 import CompanyCardSearchCard from "@/components/search-companies";
 import SortingButton from "@/components/sorting-button";

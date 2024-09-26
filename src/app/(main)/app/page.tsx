@@ -2,12 +2,12 @@
 import SearchBar from "@/components/search-bar";
 import CompanyCarousel from "@/components/company-carousel";
 import React from "react";
-import Navbar from "@/components/navbar";
 
 import CompanyCards from "@/components/company-cards";
 import SortingButton from "@/components/sorting-button";
 import { getCompaniesByKey } from "@/actions/job.action";
 import { auth } from "@/lib/auth";
+import Navbar from "@/components/navbar-app";
 
 const page = async () => {
   const company = await getCompaniesByKey({ query: "" });

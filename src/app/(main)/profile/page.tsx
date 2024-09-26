@@ -1,5 +1,5 @@
 import LogoutBtn from "@/components/client/logout-btn";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar-app";
 import UpdateForPro from "@/components/update-for-pro";
 import { auth } from "@/lib/auth";
 import React from "react";
